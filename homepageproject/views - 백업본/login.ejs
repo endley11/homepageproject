@@ -1,0 +1,15 @@
+ 
+
+  <div style="text-align:center; color:red; margin-top:2%">
+     <% if(message.length > 0) { %>
+     <%= locals.message %>
+     <% } %>
+   
+</div>
+<form action="/login" method="POST" class="signupform">
+    <label for="email">E-MAIL</label>
+    <input name="email" type="email" required/>
+    <label for="password">PASSWORD</label>
+    <input name="password" type="password" required/>
+    <button class="btn">LOGIN!</button>
+</form>
