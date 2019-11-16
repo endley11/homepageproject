@@ -1,0 +1,26 @@
+.header{
+    height:100px;
+    background: rgba(0,0,0,70%);
+}
+.header > .title > div > a {
+    color : white;
+    font-size: 60px;
+    
+}
+.register{
+    float:right;
+}
+.helpid{
+    float:left;
+}
+.navbar{
+/*    display: inline;*/
+    background: rgba(0,0,0,30%);
+}
+.navbar > div > a{
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+     
+}

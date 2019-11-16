@@ -1,0 +1,43 @@
+{
+  "name": "homepageproject-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app12345.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "connect": "^3.7.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.2.0",
+    "cookie-parser": "^1.4.4",
+    "crypto": "^1.0.1",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.0",
+    "mongoose": "^5.7.7",
+    "nodemailer": "^6.3.1",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
+    "socket.io": "^2.3.0",
+    "tesseract.js": "^1.0.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyeop617/mbw_final_duo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hyeop617/mbw_final_duo/issues"
+  },
+  "homepage": "https://github.com/Hyeop617/mbw_final_duo#readme"
+}

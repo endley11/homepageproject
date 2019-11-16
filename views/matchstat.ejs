@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/matchstat.css">
+    <title>England Primier League</title>
+    <script>
+        $(function() {
+            $.backstretch("images/main.jpg");
+        });
+
+    </script>
+         <style>
+     @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap&subset=korean');
+    </style>
+</head>
+
+<body>
+    <section class="header">
+        <div class="title text-center">
+            <div><a href="/">놀이동산</a></div>
+        </div>
+    </section>
+    <section class="navbar">
+         <div class="navbar-item">
+              <a href="/epl" class="sm-link sm-link_text sm-link7" data-sm-link-text="EPL">
+            <span class="sm-link__label">EPL</span>
+        </a>
+            <a href="/laliga" class="sm-link sm-link_text sm-link7" data-sm-link-text="La Liga">
+            <span class="sm-link__label"> La Liga</span>
+        </a>
+           <a href="/bundesliga" class="sm-link sm-link_text sm-link7" data-sm-link-text="Bundesliga">
+            <span class="sm-link__label"> Bundesliga</span>
+        </a>
+            <a href="/seriea" class="sm-link sm-link_text sm-link7" data-sm-link-text="Serie A">
+            <span class="sm-link__label"> Serie A</span>
+        </a>
+           
+              <a href="/ligue1" class="sm-link sm-link_text sm-link7" data-sm-link-text="Ligue 1">
+            <span class="sm-link__label"> Ligue 1</span>
+        </a>
+           
+           <a href="/eredivisie" class="sm-link sm-link_text sm-link7" data-sm-link-text="Eredivisie">
+            <span class="sm-link__label"> Eredivisie</span>
+        </a>
+            <a href="/chat" class="sm-link sm-link_text sm-link7" data-sm-link-text="유저 채팅">
+            <span class="sm-link__label"> 유저 채팅</span>
+        </a>
+        </div>
+    </section>
+    <section class="container mt-5">
+        <% var data = matchstat; %>
+        <table class="w-100">
+            <tr>
+                <td class="w-50">
+                    <table class="table table-striped bg-light text-center">
+                        <tr>
+                            <td><img src="/images/team/<%=matchstat.home%>.png" alt="<%=matchstat.home%>" height="200px"></td>
+                        </tr>
+                        <tr>
+                            <td class="teamname_title home"><%=data.home%></td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="w-50">
+                    <table class="table table-striped bg-light text-center">
+                        <tr>
+                            <td><img src="/images/team/<%=matchstat.away%>.png" alt="<%=matchstat.away%>" height="200px"></td>
+                        </tr>
+                        <tr>
+                            <td class="teamname_title away"><%=data.away%></td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+        <table class="table table-striped bg-light text-center">
+            <tr>
+                <td colspan="8">최근 경기 결과</td>
+            </tr>
+            <tr>
+                <td>날짜</td>
+                <td></td>
+                <td></td>
+                <td>스코어</td>
+                <td>날짜</td>
+                <td></td>
+                <td></td>
+                <td>스코어</td>
+            </tr>
+            <% data.homeRecentTable.forEach((e,i) => {%>
+                <tr>
+                    <td><%=e.date%></td>
+                    <% if(e.home == data.home) {%> <td><b><%=e.home%></b></td> <% }else{%><td><%=e.home%></td> <%}%>
+                    <% if(e.away == data.home) {%> <td><b><%=e.away%></b></td> <% }else{%><td><%=e.away%></td> <%}%>
+                    <td><%=e.score%></td>
+                    <td><%=data.awayRecentTable[i].date%></td>
+                    <% if(data.awayRecentTable[i].home == data.away) {%> <td><b><%=data.awayRecentTable[i].home%></b></td> <% }else{%><td><%=data.awayRecentTable[i].home%></td> <%}%>
+                    <% if(data.awayRecentTable[i].away == data.away) {%> <td><b><%=data.awayRecentTable[i].away%></b></td> <% }else{%><td><%=data.awayRecentTable[i].away%></td> <%}%>
+                    <td><%=data.awayRecentTable[i].score%></td>
+            <% } )%>
+                </tr>
+        </table>
+        <table class="table table-striped bg-light">
+            <tr>
+                <td></td>
+                <td>경기 수</td>
+                <td>승</td>
+                <td>무</td>
+                <td>패</td>
+                <td></td>
+                <td>경기 수</td>
+                <td>승</td>
+                <td>무</td>
+                <td>패</td>
+            </tr>
+            <tr>
+                <td>홈</td>
+                <td><%=data.homeHomeGP%></td>
+                <td><%=data.homeHomeWin%></td>
+                <td><%=data.homeHomeDraw%></td>
+                <td><%=data.homeHomeLose%></td>
+                <td>어웨이</td>
+                <td><%=data.awayAwayGP%></td>
+                <td><%=data.awayAwayWin%></td>
+                <td><%=data.awayAwayDraw%></td>
+                <td><%=data.awayAwayLose%></td>
+            </tr>
+            <tr>
+                <td>전체</td>
+                <td><%=data.homeTotalGP%></td>
+                <td><%=data.homeTotalWin%></td>
+                <td><%=data.homeTotalDraw%></td>
+                <td><%=data.homeTotalLose%></td>
+                <td>전체</td>
+                <td><%=data.awayTotalGP%></td>
+                <td><%=data.awayTotalWin%></td>
+                <td><%=data.awayTotalDraw%></td>
+                <td><%=data.awayTotalLose%></td>
+            </tr>
+        </table>
+        <table class="table-sm w-100 bg-light text-center">
+            <tr class="table-active table-bordered">
+                <td colspan="5" class="text-center">상대전적</td>
+            </tr>
+            <tr class="table-active">
+                <td>날짜</td>
+                <td></td>
+                <td></td>
+                <td>스코어</td>
+                <td width="30">홈</td>
+            </tr>
+            <% data.h2hMatch.forEach((e,i) => { %>
+            <tr>
+                <td><%=e.date%></td>
+                <% if (e.home == data.home) { %>
+                <td><b><%=e.home%></b></td>
+                <% } else { %>
+                <td><%=e.home%></td>
+                <%} %>
+                <% if (e.away == data.home) { %>
+                <td><b><%=e.away%></b></td>
+                <% } else { %>
+                <td><%=e.away%></td>
+                <%} %>
+                <td><%=e.score%></td>
+                <% if(e.score.charAt(0) < e.score.charAt(4)) { %>
+                <td class="away text-white">패</td>
+                <% }else if(e.score.charAt(0)> e.score.charAt(4)) { %>
+                <td class="home text-white">승</td>
+                <%} else {%>
+                <td class="draw text-white">무</td>
+                <% }%>
+            </tr>
+            <%})%>
+        </table>
+        <table class="table-sm w-100 bg-light mt-1 text-center" class="table-layout:fixed">
+            <tr class="h2h">
+                <td class="w-25">홈 승</td>
+                <td class="w-25">무승부</td>
+                <td class="w-25">어웨이 승</td>
+            </tr>
+            <tr class="h2h">
+                <td class="table-success"><%=data.h2h.win%></td>
+                <td class="table-warning"><%=data.h2h.draw%></td>
+                <td class="table-danger"><%=data.h2h.lose%></td>
+            </tr>
+        </table>
+        <table class="table-sm mt-5 w-100">
+            <tr>
+                <td>
+                    <table class="table bg-light">
+                        <tr>
+                            <td colspan="4"><b>리그</b></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>경기</td>
+                            <td>승점</td>
+                        </tr>
+                        <% data.leagueTable.forEach((e,i) => { %>
+                        <% if(e.teamname == data.home) { %>
+                        <tr class="home">
+                            <% } else if (e.teamname == data.away){ %>
+                        <tr class="away">
+                            <% } else {%>
+                        <tr>
+                            <% } %>
+                            <td><img src="/images/team/<%=e.teamname%>.png" alt="" width="20px"></td>
+                            <td><%=e.teamname%></td>
+                            <td><%=e.gameplayed%></td>
+                            <td><b><%=e.point%></b></td>
+                        </tr>
+
+                        <%})%>
+                    </table>
+                </td>
+                <td>
+                    <table class="table bg-light">
+                        <tr>
+                            <td colspan="4"><b>최근 8 경기</b></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>경기</td>
+                            <td>승점</td>
+                        </tr>
+                        <% data.last8Table.forEach((e,i) => { %>
+                        <% if(e.teamname == data.home) { %>
+                        <tr class="home">
+                            <% } else if (e.teamname == data.away){ %>
+                        <tr class="away">
+                            <% } else {%>
+                        <tr>
+                            <% } %>
+                            <td><img src="/images/team/<%=e.teamname%>.png" alt="" width="20px"></td>
+                            <td><%=e.teamname%>
+                            </td>
+                            <td><%=e.gameplayed%></td>
+                            <td><b><%=e.point%></b></td>
+                        </tr>
+
+                        <%})%>
+                    </table>
+                </td>
+                <td>
+                    <table class="table bg-light">
+                        <tr>
+                            <td colspan="4"><b>홈</b></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>경기</td>
+                            <td>승점</td>
+                        </tr>
+                        <% data.homeTable.forEach((e,i) => { %>
+                        <% if(e.teamname == data.home) { %>
+                        <tr class="home">
+                            <% } else if (e.teamname == data.away){ %>
+                        <tr class="away">
+                            <% } else {%>
+                        <tr>
+                            <% } %>
+                            <td><img src="/images/team/<%=e.teamname%>.png" alt="" width="20px"></td>
+                            <td><%=e.teamname%>
+                            </td>
+                            <td><%=e.gameplayed%></td>
+                            <td><b><%=e.point%></b></td>
+                        </tr>
+
+                        <%})%>
+                    </table>
+                </td>
+                <td>
+                    <table class="table bg-light">
+                        <tr>
+                            <td colspan="4"><b>어웨이</b></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>경기</td>
+                            <td>승점</td>
+                        </tr>
+                        <% data.awayTable.forEach((e,i) => { %>
+                        <% if(e.teamname == data.home) { %>
+                        <tr class="home">
+                            <% } else if (e.teamname == data.away){ %>
+                        <tr class="away">
+                            <% } else {%>
+                        <tr>
+                            <% } %>
+                            <td><img src="/images/team/<%=e.teamname%>.png" alt="" width="20px"></td>
+                            <td><%=e.teamname%>
+                            </td>
+                            <td><%=e.gameplayed%></td>
+                            <td><b><%=e.point%></b></td>
+                        </tr>
+
+                        <%})%>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+   <script>
+        $(function() {
+            $.backstretch(["./images/main.jpg","./images/oly.jpg","./images/sta.jpg","./images/sta1.jpg","./images/sta2.jpg","./images/sta3.jpg"],
+                         {duration:2000,fade:500});
+        });
+        
+        var audio = new Audio('bgm/Fire.mp3');
+        audio.play();
+        
+        
+           $('.fun-btn').on('click', function(event) {
+        $(this).toggleClass('start-fun');
+        var $page = $('.page');
+        $page.toggleClass('color-bg-start')
+        .toggleClass('bg-animate-color');
+
+  //change text when when button is clicked
+
+    $(this).hasClass('start-fun') ?
+    $(this).text('stop the fun') :
+    $(this).text('start the fun');
+
+});
+
+    </script>
+    
+         <style>
+     @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap&subset=korean');
+    </style>
+</head>
+
+<body>
+    <section class="header">
+        <div class="title text-center">
+            <div><a href="/">놀이동산</a></div>
+        </div>
+    </section>
+    <section class="navbar">
+         <div class="navbar-item">
+              <a href="/epl" class="sm-link sm-link_text sm-link7" data-sm-link-text="EPL">
+            <span class="sm-link__label">EPL</span>
+        </a>
+            <a href="/laliga" class="sm-link sm-link_text sm-link7" data-sm-link-text="La Liga">
+            <span class="sm-link__label"> La Liga</span>
+        </a>
+           <a href="/bundesliga" class="sm-link sm-link_text sm-link7" data-sm-link-text="Bundesliga">
+            <span class="sm-link__label"> Bundesliga</span>
+        </a>
+            <a href="/seriea" class="sm-link sm-link_text sm-link7" data-sm-link-text="Serie A">
+            <span class="sm-link__label"> Serie A</span>
+        </a>
+           
+              <a href="/ligue1" class="sm-link sm-link_text sm-link7" data-sm-link-text="Ligue 1">
+            <span class="sm-link__label"> Ligue 1</span>
+        </a>
+           
+           <a href="/eredivisie" class="sm-link sm-link_text sm-link7" data-sm-link-text="Eredivisie">
+            <span class="sm-link__label"> Eredivisie</span>
+        </a>
+            <a href="/chat" class="sm-link sm-link_text sm-link7" data-sm-link-text="유저 채팅">
+            <span class="sm-link__label"> 유저 채팅</span>
+        </a>
+        </div>
+    </section>
+    <section class="container">
+        <div class="page1">
+              <button class="fun-btn"><a id="font" href="/signin">로그인 하세요</a></button>
+        </div>
+    </section>
+    
+
+</body>
+
+</html>

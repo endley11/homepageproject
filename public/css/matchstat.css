@@ -1,0 +1,23 @@
+.home {
+    background: rgb(0,204,204)
+}
+.away{
+    background: rgb(244,143,177)
+}
+.draw{
+    background:rgb(255, 213, 79)
+}
+.homefont{
+    color: rgb(0,204,204)
+}
+.awayfont{
+    color:rgb(244,143,177)
+}
+.drawfont{
+    color:rgb(255, 213, 79)
+}
+
+.teamname_title{
+    font-size: 23px;
+    font-weight: bold;
+}

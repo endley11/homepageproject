@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>채팅</title>
+    <link rel="stylesheet" href="./css/chat.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/chat.js"></script>
+    
+    
+    <script>
+      function enterKey(){
+          if(window.event.keyCode == 13){
+              
+          }
+      }
+      
+      var audio = new Audio('/bgm/Fire.mp3');
+        audio.play();
+      
+      </script>
+  </head>
+  <body>
+    <div id="main">
+     <div id="chat">
+        <!-- 채팅 메시지 영역 -->
+      </div>
+      <div class="wrap">
+        <input type="text"  id="test" onkeydown = "if(event.keyCode == 13) send()" placeholder="메시지를 입력해주세요..">
+        <button class="button" onclick="send()">전송</button>
+      </div>
+        
+    </div>
+  </body>
+</html>
